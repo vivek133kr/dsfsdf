@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="./page.css" />
+  </head>
+  <style>
+
+  @media only screen and (min-width: 1001px)  {
+    .carousel-container {
+      position: relative;
+      max-width: 90%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+    }
+
+    .carousel-btn {
+      font-size: 24px;
+
+      border: none;
+      cursor: pointer;
+
+      color: black;
+      padding: 10px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #000;
+    }
+
+    .review-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .review {
+      display: none;
+      text-align: center;
+    }
+
+    .review.active {
+      display: block;
+    }
+
+    .review-dots {
+      display: flex;
+      width: 100%%;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .review-dot {
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      border-radius: 50%;
+      background-color: #bbb;
+      cursor: pointer;
+    }
+
+    .review-dot.active {
+      background-color: #333;
+    }
+
+    .faq-container {
+  width:80%;
+  margin: 20px auto;
+}
+
+.faq {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.question {
+  font-weight: bold;
+  color: black;
+}
+
+.answer {
+  display: none;
+
+}
+
+.answer.active {
+  display: block;
+}
+.more-faqs-button {
+  text-align: center;
+  cursor: pointer;
+border: 1px solid var(--josh-orange, #F4792A);
+color:#F4792A;
+background-color: white;
+height:37px;
+display:flex;
+justify-content: center;
+align-items: center;
+padding:30px;
+border-radius:51px;
+width:182px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+.blog-carousel-container {
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* Added to hide overflowing blogs */
+}
+
+
+.blog-carousel {
+  display: flex;
+  margin-top:30px;
+  transition: transform 0.3s ease; /* Added for smooth sliding effect */
+}
+
+.blog {
+
+  flex: 0 0 calc(100% / 3); /* Set width to one-third of the container */
+  text-align: center;
+
+}
+
+.blog img {
+  max-width: 100%;
+  height: auto;
+}
+
+.blog h3 {
+  margin: 10px 0;
+}
+
+
+
+.blog-next-btn,
+.blog-prev-btn {
+
+  background-color: #f1f1f1;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+}
+    }
+
+
+@media only screen and (max-width: 1000px) {
+      .carousel-container {
+      position: relative;
+      max-width: 90%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+    }
+
+    .carousel-btn {
+      font-size: 24px;
+
+      border: none;
+      cursor: pointer;
+
+      color: black;
+      padding: 10px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #000;
+    }
+
+    .review-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .review {
+      display: none;
+      text-align: center;
+    }
+
+    .review.active {
+      display: block;
+    }
+
+    .review-dots {
+      display: flex;
+      width: 100%%;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .review-dot {
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      border-radius: 50%;
+      background-color: #bbb;
+      cursor: pointer;
+    }
+
+    .review-dot.active {
+      background-color: #333;
+    }
+
+    .faq-container {
+  width:80%;
+  margin: 20px auto;
+}
+
+.faq {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.question {
+  font-weight: bold;
+  color: black;
+}
+
+.answer {
+  display: none;
+
+}
+
+.answer.active {
+  display: block;
+}
+.more-faqs-button {
+  text-align: center;
+  cursor: pointer;
+border: 1px solid var(--josh-orange, #F4792A);
+color:#F4792A;
+background-color: white;
+height:37px;
+display:flex;
+justify-content: center;
+align-items: center;
+padding:30px;
+border-radius:51px;
+width:182px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+.blog-carousel-container {
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* Added to hide overflowing blogs */
+}
+
+
+.blog-carousel {
+  display: flex;
+  margin-top:30px;
+  transition: transform 0.3s ease; /* Added for smooth sliding effect */
+}
+
+.blog {
+
+  flex: 0 0 100%; /* Set width to one-third of the container */
+  text-align: center;
+
+}
+
+.blog img {
+  max-width: 100%;
+  height: auto;
+}
+
+.blog h3 {
+  margin: 10px 0;
+}
+
+
+
+.blog-next-btn,
+.blog-prev-btn {
+
+  background-color: #f1f1f1;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+}
+}
+  </style>
+  <body style="background-color: white">
+    <section style="">
+      <div class="upscbanner">
+        <div class="mainchildupscdiv">
+          
+            <div class="container">
+              <img src="./cloud1.png" class="imgupscCloud1" alt="Image 1" />
+              <img src="./cloud2.png" class="imgupscCloud2" alt="Image 2" />
+              <img src="./cloud3.png" class="imgupscCloud3" alt="Image 3" />
+            </div>
+          <div class="upscchilddiv">
+            <p class="upscp1">
+              Empowering <span class="upscp2">UPSC aspirants </span> for
+              success.
+            </p>
+          </div>
+          <div class="upscsecdiv">
+          
+            <img class="upscline" src="./upscline.png" alt="new image" />
+
+            <div class="mobbtn">
+            <button class="upscbtn">Talk to UPSC Counsellor</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section style="display: flex; justify-content: center">
+      <div class="secondSection">
+        <p class="secondImpactP">Impact</p>
+        <div class="childSecondDiv">
+          <div class="firstImpactDiv">
+            <p>Number of Students Served</p>
+            <p>200+</p>
+          </div>
+          <div class="secondUpscLine"></div>
+          <div class="secondImpactDiv">
+            <p>Total Amount of Scholarship Given</p>
+            <p>50 Lakh+</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      style="
+        display: flex;
+        justify-content: center;
+        background: var(--surface-background, #f6f6f6);
+        width: 100%;
+        padding-top: 3%;
+        padding-bottom: 6%;
+      "
+    >
+      <div class="thirdUpscDiv">
+        <p class="thirdp1">2345+ students already enrolled</p>
+        <p class="thirdp2">Don't Just Take Our Words</p>
+
+        <div class="thirdChildDiv1">
+          <div class="thirdChildD1">
+            <p>Testimonials</p>
+            <p>Aenean aliquet lectus vestibulum.</p>
+          </div>
+          <div
+            class="thirdChildD2"
+            style="display: flex; justify-content: center; align-items: center"
+          >
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <iframe
+                    class="youtubevideo"
+                    src="https://www.youtube.com/embed/-i8ZvvKY51Q"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="carousel-slide">
+                  <iframe
+                  class="youtubevideo"
+                    src="https://www.youtube.com/embed/AN3FJ9Vzfs4"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="carousel-slide">
+                  <iframe
+                    class="youtubevideo"
+                    src="https://www.youtube.com/embed/xRqI5R6L7ow"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+
+              <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+            <div class="carousel-navigation">
+              <button class="carousel-btn next-btn">></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="
+        display: flex;
+        justify-content: center;
+        background-color: #f4792a;
+        width: 100%;
+        padding-top: 3%;
+        padding-bottom: 6%;
+      "
+    >
+      <div class="mainupsc4thDiv">
+        <div>
+          <p>What JoshTalks UPSC do?</p>
+        </div>
+        <div class="mainupscFlex">
+          <div class="fourthUPSCChildDiv">
+            <img src="./book.png" alt="" />
+            <p>Expert Guidance</p>
+            <p>
+              Empowers audience on how to manage money and all things related
+              personal finance Lorem ipsum dolor sit amet, consectetur elit. Id
+              at sapien, id integer.
+            </p>
+          </div>
+          <div class="fourthUPSCChildDiv">
+            <img src="./rocket.png" alt="" />
+            <p>Financial Support</p>
+            <p>
+              Empowers audience on how to manage money and all things related
+              personal finance Lorem ipsum dolor sit amet, consectetur elit. Id
+              at sapien, id integer.
+            </p>
+          </div>
+          <div class="fourthUPSCChildDiv">
+            <img src="./couple.png" alt="" />
+            <p>1:1 Mentorship</p>
+            <p>
+              Empowers audience on how to manage money and all things related
+              personal finance Lorem ipsum dolor sit amet, consectetur elit. Id
+              at sapien, id integer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="
+        display: flex;
+        justify-content: center;
+        background-color: #f6f6f6;
+        width: 100%;
+        padding-top: 6%;
+        padding-bottom: 4%;
+      "
+    >
+      <div class="fifthUPSCdiv">
+        <div class="fifthUPSCp">
+          <p>Guidance you can rely on for UPSC success</p>
+          <p>
+            Unlock your potential with our expert advisors. Get personalized
+            guidance and support to achieve your goals and reach new heights.
+          </p>
+        </div>
+
+        <div class="fifthUPSCbox">
+          <div class="firstUPSCbox">
+            <div class="childupscbox">
+              <div style="padding: 20px">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    height: fit-content;
+                  "
+                >
+                  <img
+                    style="
+                      margin-top: 0px;
+                      padding-top: 0px;
+                      height: 18px;
+                      width: 25px;
+                      margin-right: 10px;
+                    "
+                    src="./sign.png"
+                    alt="iage"
+                  />
+                  <p class="upscboxheader">Comprehensive preparation</p>
+                </div>
+                <p class="boxParaupsc">
+                  Mentorship and guidance offer personalized support from
+                  experienced advisors to help UPSC students with strategy,
+                  materials, feedback, and motivation.
+                </p>
+              </div>
+            </div>
+            <div class="childupscbox">
+              <div style="padding: 20px">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    height: fit-content;
+                  "
+                >
+                  <img
+                    style="
+                      margin-top: 0px;
+                      padding-top: 0px;
+                      height: 18px;
+                      width: 25px;
+                      margin-right: 10px;
+                    "
+                    src="./sign.png"
+                    alt="iage"
+                  />
+                  <p class="upscboxheader">Mentorship and guidance</p>
+                </div>
+                <p class="boxParaupsc">
+                  Mentorship and guidance offer personalized support from
+                  experienced advisors to help UPSC students with strategy,
+                  materials, feedback, and motivation.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="secondUPSCbox">
+            <div class="childupscbox">
+              <div style="padding: 20px">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    height: fit-content;
+                  "
+                >
+                  <img
+                    style="
+                      margin-top: 0px;
+                      padding-top: 0px;
+                      height: 18px;
+                      width: 25px;
+                      margin-right: 10px;
+                    "
+                    src="./sign.png"
+                    alt="iage"
+                  />
+                  <p class="upscboxheader">Access to resources</p>
+                </div>
+                <p class="boxParaupsc">
+                  Comprehensive preparation offers holistic UPSC exam
+                  preparation with in-depth coverage of syllabus and guidance
+                  from experienced advisors.
+                </p>
+              </div>
+            </div>
+            <div class="childupscbox">
+              <div style="padding: 20px">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    height: fit-content;
+                  "
+                >
+                  <img
+                    style="
+                      margin-top: 0px;
+                      padding-top: 0px;
+                      height: 18px;
+                      width: 25px;
+                      margin-right: 10px;
+                    "
+                    src="./sign.png"
+                    alt="iage"
+                  />
+                  <p class="upscboxheader">Supportive community</p>
+                </div>
+                <p class="boxParaupsc">
+                  Supportive community connects UPSC students with peers and
+                  advisors for motivation, collaboration, and personalized
+                  guidance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="width: 100%; display: flex; justify-content: center">
+          <button class="upscfifthBtn">
+            Book a free call with Counsellors<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              style="margin-left: 10px"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M11.2929 4.29289C11.6834 3.90237 12.3166 3.90237 12.7071 4.29289L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L12.7071 19.7071C12.3166 20.0976 11.6834 20.0976 11.2929 19.7071C10.9024 19.3166 10.9024 18.6834 11.2929 18.2929L16.5858 13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H16.5858L11.2929 5.70711C10.9024 5.31658 10.9024 4.68342 11.2929 4.29289Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        width: 100%;
+        padding-top: 6%;
+        padding-bottom: 4%;
+      "
+    >
+      <div class="mainSixthDiv">
+        <div class="firstSixChild">
+          <p>Steps to get Scholarship by josh talk</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit
+            malesuada eros adipiscing neque fames.
+          </p>
+          <a href="tel:123-456-7890">123-456-7890</a>
+<div itemscope itemtype="https://schema.org/LocalBusiness">
+<h1 itemprop="name">WordPress Theme</h1>
+Phone: <span itemprop="telephone"><a href="tel:+123456890">
+234567890</a></span>
+</div>
+        </div>
+
+        <div class="sixBoxDiv">
+          <div class="sixChildBox">
+            <div
+              style="
+                padding-top: 8px;
+                padding-bottom: 20px;
+                padding-right: 20px;
+                padding-left: 20px;
+              "
+            >
+              <div
+                style="
+                  width: fit-content;
+
+                  background-color: #fac172;
+                  border-radius: 360px;
+                  color: white;
+                "
+              >
+                <p class="sixParaupsc" style="padding: 10px">01</p>
+              </div>
+
+              <div>
+                <p class="sixFirstPara">Fill Application Form</p>
+                <p class="six2ndpara">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit
+                  malesuada eros adipiscing neque fames.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="sixChildBox restBorder">
+            <div
+              style="
+                padding-top: 8px;
+                padding-bottom: 20px;
+                padding-right: 20px;
+                padding-left: 20px;
+              "
+            >
+              <div
+                style="
+                  width: fit-content;
+
+                  background-color: #fac172;
+                  border-radius: 360px;
+                  color: white;
+                "
+              >
+                <p class="sixParaupsc" style="padding: 10px">02</p>
+              </div>
+
+              <div style="word-wrap: break-word">
+                <p class="restsixPara">Get Mentorship</p>
+              </div>
+            </div>
+          </div>
+          <div class="sixChildBox restBorder">
+            <div
+              style="
+                padding-top: 8px;
+                padding-bottom: 20px;
+                padding-right: 20px;
+                padding-left: 20px;
+              "
+            >
+              <div
+                style="
+                  width: fit-content;
+
+                  background-color: #fac172;
+                  border-radius: 360px;
+                  color: white;
+                "
+              >
+                <p class="sixParaupsc" style="padding: 10px">03</p>
+              </div>
+
+              <div style="word-wrap: break-word">
+                <p class="restsixPara">pass the interview</p>
+              </div>
+            </div>
+          </div>
+          <div class="sixChildBox restBorder">
+            <div
+              style="
+                padding-top: 8px;
+                padding-bottom: 20px;
+                padding-right: 20px;
+                padding-left: 20px;
+              "
+            >
+              <div
+                style="
+                  width: fit-content;
+
+                  background-color: #fac172;
+                  border-radius: 360px;
+                  color: white;
+                "
+              >
+                <p class="sixParaupsc" style="padding: 10px">04</p>
+              </div>
+
+              <div style="word-wrap: break-word">
+                <p class="restsixPara">Start UPSC Preparation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center">
+          <button class="applybtn">Click here to Apply!</button>
+        </div>
+      </div>
+    </section>
+    <section
+      style="
+        display: flex;
+        justify-content: center;
+        background-color: #f6f6f6;
+        width: 100%;
+        padding-top: 6%;
+        padding-bottom: 4%;
+      "
+    >
+      <div class="sevenMainDiv">
+        <div class="seven1stchild">
+          <p>Our Partner Institutes</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit
+            malesuada eros adipiscing neque fames.
+          </p>
+        </div>
+      <div class="seven2ndchild">
+  <div class="seven1stbox">
+    <div style="padding: 30px; width: 90%;">
+      <img
+        style="width: 100%; height: 274px; border-radius: 12px"
+        src="./ksg.png"
+        alt="kg"
+      />
+      <div
+        style="
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          margin-top: 15px;
+          word-wrap: wrap;
+        "
+      >
+        <div>
+          <p class="sevenheading">KSG India</p>
+          <p class="seven2ndP">Learning Mode</p>
+          <p class="seven3rdP">
+            Live/Online
+            <span>
+              <img
+                style="width: 18px; height: 18px; margin-left: 10px"
+                src="./checkicon.png"
+                alt="df"
+              />
+            </span>
+          </p>
+        </div>
+        <div style="width: 50%; word-wrap: break-word;">
+          <p class="seven2ndheading">Institute Contact</p>
+          <p class="sevenrestP">https://ksgindia.com</p>
+          <p class="sevenrestP">hello@ksgindia.com</p>
+          <p class="sevenrestP">+91 99999 99999</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="seven1stbox">
+    <div style="padding: 30px; width: 90%;">
+      <img
+        style="width: 100%; height: 274px; border-radius: 12px"
+        src="./ksg.png"
+        alt="kg"
+      />
+      <div
+        style="
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          margin-top: 15px;
+          word-wrap: wrap;
+        "
+      >
+        <div>
+          <p class="sevenheading">KSG India</p>
+          <p class="seven2ndP">Learning Mode</p>
+          <p class="seven3rdP">
+            Live/Online
+            <span>
+              <img
+                style="width: 18px; height: 18px; margin-left: 10px"
+                src="./checkicon.png"
+                alt="df"
+              />
+            </span>
+          </p>
+        </div>
+        <div style="width: 50%; word-wrap: wrap;">
+          <p class="seven2ndheading">Institute Contact</p>
+          <p class="sevenrestP">https://ksgindia.com</p>
+          <p class="sevenrestP">hello@ksgindia.com</p>
+          <p class="sevenrestP">+91 99999 99999</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <section
+      style="
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        width: 100%;
+        padding-top: 6%;
+        padding-bottom: 4%;
+      "
+    >
+      <div
+       
+        class="eightUpscDiv"
+      >
+        <p>What Students Say About Us</p>
+
+        <p>“</p>
+
+        <div class="review-container" style="width: 100%">
+          <div class="review-slide">
+            <div class="review">
+              It is very useful application for the learners of English
+              language. The features of this app are fabulous. We can practice
+              our speaking by talking to the beginners from different places
+              like us.
+            </div>
+            <div class="review">Review 2: This is the second review.</div>
+            <div class="review">Review 3: This is the third review.</div>
+          </div>
+          <div class="review-dots">
+            <span class="review-dot active"></span>
+            <span class="review-dot"></span>
+            <span class="review-dot"></span>
+          </div>
+        </div>
+
+        <div></div>
+      </div>
+    </section>
+
+
+    <section    style="
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        width: 100%;
+        padding-top: 0%;
+        padding-bottom: 4%;
+      ">
+    
+    
+      <div class="nineMainDiv">
+    <div>
+    <p>FAQs</p>
+    </div>
+     <div class="faq-container">
+    <div class="faq" data-faq="1">
+      <div class="question">Question 1: What is Lorem Ipsum?</div>
+      <div class="answer">Answer 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    </div>
+    <div class="faq" data-faq="2">
+      <div class="question">Question 2: Why do we use it?</div>
+      <div class="answer">Answer 2: Sed do eikdnfasodjosjfokasjdosajdokasndoasndokasndosfosdfoisdhfishfijsdfjsdnfdksjfnkjdsnfkjdsfnjdsnfjsdnfjksmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    </div>
+    <div class="faq" data-faq="3">
+      <div class="question">Question 3: Where does it come from?</div>
+      <div class="answer">Answer 3: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    </div>
+    <div class="faq" data-faq="4">
+      <div class="question">Question 4: Is it useful?</div>
+      <div class="answer">Answer 4: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+    </div>
+    <div class="faq" data-faq="5">
+      <div class="question">Question 5: How can I get more information?</div>
+      <div class="answer">Answer 5: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    </div>
+    
+   
+
+    <!-- Hidden FAQs (Initially not visible) -->
+    <div class="faq hidden" data-faq="6">
+      <div class="question">Question 6: What is Lorem Ipsum 2?</div>
+      <div class="answer">Answer 6: Lorem ipsum dolor sit amet, consectetur adipiscing elit 2.</div>
+    </div>
+
+     <div style="
+     
+     width:100%;
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     margin-top: 60px
+     ">
+
+      <button class="more-faqs-button">More Faqs</button>
+     </div>
+    <!-- Repeat four more hidden FAQs here -->
+  </div>
+  </div>
+    
+    </div>
+    </section>
+
+ <section style="
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+  padding-top: 6%;
+  padding-bottom: 4%;
+">
+  <div class="blog-carousel-container">
+    <div class="blogfirst">
+      <p class="blogheader">Josh Blogs</p>
+      <button class="blogbtn">
+        View All Blogs
+      </button>
+    </div>
+    <div class="blog-carousel">
+      <div class="blog">
+        <div class="childBlog">
+          <img src="./person.png" style="height: 382px; width: 100%" alt="Blog 1">
+          <h3 class="blobTitle">Blog Title 1</h3>
+          <p class="blogPara">This is a sasdfkjsd sdkfsd flsdkfsd fsdkf sdlfksdf dsflkdsfksdfdslkfsdlkf sdfsdklmple description for Blog 1...</p>
+        </div>
+      </div>
+      <div class="blog">
+        <div class="childBlog">
+          <img src="./person.png" style="height: 382px; width: 100%" alt="Blog 2">
+          <h3 class="blobTitle">Blog Title 2</h3>
+          <p class="blogPara">This is a sample description for Blog 2...</p>
+        </div>
+      </div>
+      <div class="blog">
+        <div class="childBlog">
+          <img src="./person.png" style="height: 382px; width: 100%;" alt="Blog 3">
+          <h3 class="blobTitle">Blog Title 3</h3>
+          <p class="blogPara">This is a sample description for Blog 3...</p>
+        </div>
+      </div>
+      <div class="blog">
+        <div class="childBlog">
+          <img src="./person.png" style="height: 382px; width: 100%" alt="Blog 4">
+          <h3 class="blobTitle">Blog Title 4</h3>
+          <p class="blogPara">This is a sample description for Blog 4...</p>
+        </div>
+      </div>
+      <div class="blog">
+        <div class="childBlog">
+          <img src="./person.png" style="height: 382px; width: 100%" alt="Blog 5">
+          <h3 class="blobTitle">Blog Title 5</h3>
+          <p class="blogPara">This is a sample description for Blog 5...</p>
+        </div>
+      </div>
+       <div class="blog">
+        <div class="childBlog">
+          <img src="./person.png" style="height: 382px; width: 100%" alt="Blog 5">
+          <h3 class="blobTitle">Blog Title 6</h3>
+          <p class="blogPara">This is a sample description for Blog 5...</p>
+        </div>
+      </div>
+      <!-- Add more blogs here -->
+    </div>
+    <button class="blog-prev-btn">&lt;</button>
+    <button class="blog-next-btn">&gt;</button>
+  </div>
+</section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        const $carouselTrack = $(".carousel-track");
+        const $carouselSlides = $(".carousel-slide");
+        const $prevBtn = $(".prev-btn");
+        const $nextBtn = $(".next-btn");
+        const $dots = $(".dot");
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+          $carouselTrack.css(
+            "transform",
+            `translateX(-${currentIndex * 100}%)`
+          );
+          $dots.removeClass("active");
+          $dots.eq(currentIndex).addClass("active");
+        }
+
+        function goToSlide(index) {
+          if (index < 0) {
+            currentIndex = $carouselSlides.length - 1;
+          } else if (index >= $carouselSlides.length) {
+            currentIndex = 0;
+          } else {
+            currentIndex = index;
+          }
+          updateCarousel();
+        }
+
+        $prevBtn.click(function () {
+          goToSlide(currentIndex - 1);
+        });
+
+        $nextBtn.click(function () {
+          goToSlide(currentIndex + 1);
+        });
+
+        $dots.click(function () {
+          const dotIndex = $(this).index();
+          goToSlide(dotIndex);
+        });
+      });
+      $(document).ready(function () {
+        let currentReview = 0;
+
+        function showReview(index) {
+          $(".review").removeClass("active");
+          $(".review").eq(index).addClass("active");
+
+          $(".review-dot").removeClass("active");
+          $(".review-dot").eq(index).addClass("active");
+        }
+
+        function nextReview() {
+          currentReview = (currentReview + 1) % $(".review").length;
+          showReview(currentReview);
+        }
+
+        $(".review-dot").on("click", function () {
+          currentReview = $(this).index();
+          showReview(currentReview);
+        });
+
+        showReview(currentReview); // Show the first review on page load.
+      });
+$(document).ready(function() {
+  const initialFAQs = 5;
+  let showingMoreFAQs = false;
+
+  $('.faq').slice(initialFAQs).addClass('hidden');
+
+  $('.more-faqs-button').on('click', function() {
+    if (showingMoreFAQs) {
+      $('.faq').slice(initialFAQs).addClass('hidden');
+      $(this).text('More FAQs');
+    } else {
+      $('.faq').slice(initialFAQs).removeClass('hidden');
+      $(this).text('Less FAQs');
+    }
+    showingMoreFAQs = !showingMoreFAQs;
+  });
+
+  $('.faq').on('click', function() {
+    const clickedFAQ = $(this).data('faq');
+
+    if ($(this).find('.answer').hasClass('active')) {
+      // Close the clicked FAQ
+      $(this).find('.answer').removeClass('active');
+    } else {
+      // Close all other FAQs and open the clicked FAQ
+      $('.faq .answer').removeClass('active');
+      $(this).find('.answer').addClass('active');
+    }
+  });
+});
+ $(document).ready(function() {
+    const blogContainer = $('.blog-carousel');
+    const blogCount = $('.blog').length;
+    const blogWidth = $('.blog').outerWidth();
+    const visibleBlogsDesktop = 3;
+    const visibleBlogsMobile = 1;
+    let visibleBlogs = visibleBlogsDesktop; // Start with desktop visibility
+    let currentPosition = 0;
+
+    function showHideButtons() {
+      $('.blog-prev-btn').toggle(currentPosition > 0);
+
+     console.log(currentPosition, blogCount - visibleBlogs, blogCount, visibleBlogs)
+      $('.blog-next-btn').toggle(currentPosition < (blogCount/3) -1);
+    }
+
+    function updatePosition() {
+      const maxPosition = Math.max(blogCount - visibleBlogs, 0);
+      currentPosition = Math.min(currentPosition, maxPosition); // Limit position to avoid extra slide
+      const translateXValue = -currentPosition * blogWidth * visibleBlogs;
+      blogContainer.css('transform', `translateX(${translateXValue}px)`);
+      showHideButtons();
+    }
+
+    function checkWindowSize() {
+      const windowWidth = $(window).width();
+      if (windowWidth < 768) {
+        visibleBlogs = visibleBlogsMobile;
+      } else {
+        visibleBlogs = visibleBlogsDesktop;
+      }
+      const maxPosition = Math.max(blogCount - visibleBlogs, 0);
+      currentPosition = Math.min(currentPosition, maxPosition); // Limit position to avoid extra slide
+      updatePosition();
+    }
+
+    checkWindowSize(); // Check window size on page load
+    $(window).resize(checkWindowSize); // Check window size on resize
+
+    function moveNext() {
+      const remainingBlogs = blogCount - (currentPosition + visibleBlogs);
+      if (remainingBlogs > 0 && currentPosition < blogCount - visibleBlogs) {
+        currentPosition++;
+        updatePosition();
+      }
+    }
+
+    function movePrev() {
+      if (currentPosition > 0) {
+        currentPosition--;
+        updatePosition();
+      }
+    }
+
+    showHideButtons();
+
+    $('.blog-next-btn').on('click', moveNext);
+    $('.blog-prev-btn').on('click', movePrev);
+  });
+</script>
+  </body>
+</html>
